@@ -1,0 +1,295 @@
+/* ========================= */
+/* OVERLAY */
+/* ========================= */
+.overlay {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: "Inter", sans-serif;
+
+  z-index: 100;
+
+  background: transparent;
+
+  opacity: 1;
+  transform: scale(1);
+
+  will-change: transform, opacity, filter;
+
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease,
+    filter 0.6s ease;
+}
+
+.overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.55);
+
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+.overlayClosing {
+  opacity: 0;
+  filter: blur(8px);
+  transform: scale(1.02);
+  pointer-events: none;
+}
+
+.wrapper {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  padding: 24px;
+
+  display: flex;
+  justify-content: center;
+
+  perspective: 1200px;
+}
+
+.card {
+  position: relative;
+
+  width: 100%;
+  max-width: 920px;
+
+  padding: 56px 72px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 0 80px rgba(0, 0, 0, 0.55),
+    0 0 60px rgba(109, 59, 215, 0.06);
+
+  overflow: hidden;
+
+  backface-visibility: hidden;
+}
+
+/* ========================= */
+/* HEADER */
+/* ========================= */
+
+.topLeft {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  opacity: .7;
+
+  color: rgba(255,255,255,.7);
+
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.topRight {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+
+  color: rgba(255,255,255,.45);
+
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #5de6ff;
+
+  box-shadow:
+    0 0 8px #5de6ff,
+    0 0 18px rgba(93, 230, 255, .7);
+
+  animation: pulse 1.8s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: .35;
+    transform: scale(.85);
+  }
+}
+
+/* ========================= */
+/* CONTENT */
+/* ========================= */
+
+.content {
+  text-align: center;
+  margin-bottom: 42px;
+}
+
+.title {
+  margin: 0;
+
+  color: white;
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(42px, 6vw, 64px);
+
+  font-weight: 700;
+
+  letter-spacing: -0.05em;
+  line-height: 1.05;
+}
+
+.accent {
+  background: linear-gradient(90deg, #d0bcff, #5de6ff);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.line {
+  width: 110px;
+  height: 1px;
+
+  margin: 26px auto;
+
+  background: linear-gradient(
+    to right,
+    transparent,
+    #5de6ff,
+    transparent
+  );
+
+  box-shadow: 0 0 10px rgba(93,230,255,.5);
+}
+
+.subtitle {
+  max-width: 620px;
+  margin: 0 auto;
+
+  color: rgba(255,255,255,.68);
+
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.subtitle span {
+  color: white;
+  font-weight: 600;
+}
+
+/* ========================= */
+/* TERMINAL */
+/* ========================= */
+
+.terminal {
+  margin-bottom: 40px;
+
+  padding: 22px;
+
+  background: rgba(0,0,0,.28);
+  border: 1px solid rgba(255,255,255,.05);
+
+  border-radius: 12px;
+
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.termLine {
+  color: #5de6ff;
+}
+
+.termLineMuted {
+  margin-top: 8px;
+  color: rgba(255,255,255,.6);
+}
+
+.arrow {
+  color: #d0bcff;
+}
+
+.cursor::after {
+  content: "_";
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* ========================= */
+/* BUTTON */
+/* ========================= */
+
+.button {
+  padding: 16px 44px;
+
+  border: 1px solid #5de6ff;
+  border-radius: 8px;
+
+  background: transparent;
+  color: #5de6ff;
+
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition: all .3s ease;
+}
+
+.button:hover {
+  background: #5de6ff;
+  color: #020617;
+  box-shadow: 0 0 30px rgba(93,230,255,.4);
+}
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+
+.footer {
+  margin-top: 48px;
+
+  display: flex;
+  justify-content: space-between;
+
+  gap: 24px; /* 🔥 agrega separación entre bloques */
+
+  color: rgba(255,255,255,.35);
+
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: .15em;
+}
+
+.iconBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 4px; /* 🔥 separa texto y subtitle */
+}

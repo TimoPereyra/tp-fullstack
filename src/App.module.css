@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #15121b;
+    color: #e7e0ed;
+    overflow-x: hidden;
+    font-family: "Inter", sans-serif;
+}
+
+#root {
+    min-height: 100vh;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+.stage {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+}
+.layer {
+  position: absolute;
+  inset: 0;
+  transition:
+    opacity 1.2s ease,
+    transform 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 1.2s ease;
+}
+
+.visible {
+  opacity: 1;
+  transform: scale(1);
+  filter: blur(0);
+  pointer-events: auto;
+}
+
+.hidden {
+  opacity: 0;
+  transform: scale(1.04);
+  filter: blur(8px);
+  pointer-events: none;
+}
+
+.hiddenDelayed {
+  opacity: 0;
+  transform: scale(0.96);
+  filter: blur(12px);
+  pointer-events: none;
+  transition-delay: 0.35s;
+}
