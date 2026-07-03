@@ -44,6 +44,9 @@
   pointer-events: none;
 }
 
+/* ========================= */
+/* WRAPPER */
+/* ========================= */
 .wrapper {
   position: relative;
   z-index: 2;
@@ -57,6 +60,9 @@
   perspective: 1200px;
 }
 
+/* ========================= */
+/* CARD */
+/* ========================= */
 .card {
   position: relative;
 
@@ -66,7 +72,6 @@
   padding: 56px 72px;
 
   border: 1px solid rgba(255, 255, 255, 0.08);
-
   border-radius: 20px;
 
   box-shadow:
@@ -74,7 +79,6 @@
     0 0 60px rgba(109, 59, 215, 0.06);
 
   overflow: hidden;
-
   backface-visibility: hidden;
 }
 
@@ -82,18 +86,11 @@
 /* HEADER */
 /* ========================= */
 
-.topLeft {
+.topLeft,
+.topRight {
   position: absolute;
+
   top: 24px;
-  left: 24px;
-
-  display: flex;
-  align-items: center;
-  gap: 10px;
-
-  opacity: .7;
-
-  color: rgba(255,255,255,.7);
 
   font-family: "JetBrains Mono", monospace;
   font-size: 11px;
@@ -101,17 +98,18 @@
   text-transform: uppercase;
 }
 
+.topLeft {
+  left: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  opacity: .7;
+  color: rgba(255,255,255,.7);
+}
+
 .topRight {
-  position: absolute;
-  top: 24px;
   right: 24px;
-
   color: rgba(255,255,255,.45);
-
-  font-family: "JetBrains Mono", monospace;
-  font-size: 11px;
-  letter-spacing: .18em;
-  text-transform: uppercase;
 }
 
 .dot {
@@ -119,7 +117,6 @@
   height: 8px;
 
   border-radius: 50%;
-
   background: #5de6ff;
 
   box-shadow:
@@ -147,14 +144,12 @@
 
 .title {
   margin: 0;
-
   color: white;
 
   font-family: "Space Grotesk", sans-serif;
   font-size: clamp(42px, 6vw, 64px);
 
   font-weight: 700;
-
   letter-spacing: -0.05em;
   line-height: 1.05;
 }
@@ -168,16 +163,9 @@
 .line {
   width: 110px;
   height: 1px;
-
   margin: 26px auto;
 
-  background: linear-gradient(
-    to right,
-    transparent,
-    #5de6ff,
-    transparent
-  );
-
+  background: linear-gradient(to right, transparent, #5de6ff, transparent);
   box-shadow: 0 0 10px rgba(93,230,255,.5);
 }
 
@@ -186,7 +174,6 @@
   margin: 0 auto;
 
   color: rgba(255,255,255,.68);
-
   font-family: "Inter", sans-serif;
   font-size: 16px;
   line-height: 1.9;
@@ -203,12 +190,10 @@
 
 .terminal {
   margin-bottom: 40px;
-
   padding: 22px;
 
   background: rgba(0,0,0,.28);
   border: 1px solid rgba(255,255,255,.05);
-
   border-radius: 12px;
 
   font-family: "JetBrains Mono", monospace;
@@ -235,9 +220,7 @@
 }
 
 @keyframes blink {
-  50% {
-    opacity: 0;
-  }
+  50% { opacity: 0; }
 }
 
 /* ========================= */
@@ -261,6 +244,10 @@
   cursor: pointer;
 
   transition: all .3s ease;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .button:hover {
@@ -278,8 +265,7 @@
 
   display: flex;
   justify-content: space-between;
-
-  gap: 24px; /* 🔥 agrega separación entre bloques */
+  gap: 24px;
 
   color: rgba(255,255,255,.35);
 
@@ -291,10 +277,11 @@
 .iconBlock {
   display: flex;
   flex-direction: column;
-  gap: 4px; /* 🔥 separa texto y subtitle */
+  gap: 4px;
 }
+
 /* ========================= */
-/* RESPONSIVE IMPROVEMENTS */
+/* RESPONSIVE */
 /* ========================= */
 
 @media (max-width: 1024px) {
@@ -364,8 +351,13 @@
   .footer {
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align: center;
     gap: 12px;
+  }
+
+  .iconBlock {
+    align-items: center;
   }
 
   .button {
@@ -377,7 +369,8 @@
 
 @media (max-width: 480px) {
   .card {
-    padding: 28px 18px;
+    padding: 24px 14px;
+    border-radius: 14px;
   }
 
   .title {
@@ -396,11 +389,28 @@
   .topLeft,
   .topRight {
     font-size: 9px;
-    letter-spacing: .12em;
+    letter-spacing: .1em;
+  }
+
+  .topLeft {
+    top: 12px;
+    left: 12px;
+  }
+
+  .topRight {
+    top: 12px;
+    right: 12px;
   }
 
   .dot {
     width: 6px;
     height: 6px;
+  }
+
+  .button {
+    width: 100%;
+    max-width: 100%;
+    padding: 14px 16px;
+    letter-spacing: .18em;
   }
 }
