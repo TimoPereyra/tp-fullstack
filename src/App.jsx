@@ -1,7 +1,7 @@
-import { useOnboarding } from "./features/onboarding/hooks/useOnboarding";
+import { useOnboarding } from "./features/onBoarding/hooks/useOnboarding";
 
-import LoadingScreen from "./features/onboarding/components/LoadingScreen/LoadingScreen";
-import WelcomeModal from "./features/onboarding/components/WelcomeModal/WelcomeModal";
+import LoadingScreen from "./features/onBoarding/components/LoadingScreen/LoadingScreen";
+import WelcomeModal from "./features/onBoarding/components/WelcomeModal/WelcomeModal";
 import Home from "./pages/Home/Home";
 
 import styles from "./App.module.css";
