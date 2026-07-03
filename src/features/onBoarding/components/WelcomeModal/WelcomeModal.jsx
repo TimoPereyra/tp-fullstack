@@ -32,8 +32,7 @@ function WelcomeModal({ onClose }) {
         const x = (window.innerWidth / 2 - e.clientX) / sensitivity;
         const y = (window.innerHeight / 2 - e.clientY) / sensitivity;
 
-        card.style.transform =
-          `rotateY(${-x}deg) rotateX(${y}deg)`;
+        card.style.transform = `rotateY(${-x}deg) rotateX(${y}deg)`;
       });
     };
 
@@ -58,11 +57,11 @@ function WelcomeModal({ onClose }) {
           {/* HEADER */}
           <div className={styles.topLeft}>
             <div className={styles.dot} />
-            <span>AVAILABLE_FOR_WORK</span>
+            <span>DISPONIBLE_PARA_TRABAJAR</span>
           </div>
 
           <div className={styles.topRight}>
-            <span>LATAM_REMOTE_READY</span>
+            <span>REMOTO_LATAM_READY</span>
           </div>
 
           {/* CONTENT */}
@@ -74,8 +73,10 @@ function WelcomeModal({ onClose }) {
             <div className={styles.line} />
 
             <p className={styles.subtitle}>
-              Building reliable software for business and healthcare
-              through scalable architectures and practical engineering.
+              Desarrollador Full Stack especializado en
+              <span> PHP, Laravel y JavaScript</span>, con experiencia
+              construyendo y manteniendo sistemas críticos para gestión
+              empresarial y salud digital.
             </p>
           </div>
 
@@ -84,28 +85,28 @@ function WelcomeModal({ onClose }) {
             <div className={styles.termLine}>
               <span className={styles.arrow}>&gt;</span>
               <span className={styles.cursor}>
-                Initializing_Developer_Profile
+                Inicializando_Perfil_Profesional
               </span>
             </div>
 
             <div className={styles.termLineMuted}>
               <span className={styles.arrow}>&gt;</span>
-              <span>Backend_Specialization ........ Laravel</span>
+              <span>Especialización_Backend ........ Laravel</span>
             </div>
 
             <div className={styles.termLineMuted}>
               <span className={styles.arrow}>&gt;</span>
-              <span>Enterprise_Experience ......... Oracle</span>
+              <span>Experiencia_Enterprise ......... Oracle</span>
             </div>
 
             <div className={styles.termLineMuted}>
               <span className={styles.arrow}>&gt;</span>
-              <span>Frontend_Runtime .............. React</span>
+              <span>Frontend_Moderno ............... React</span>
             </div>
 
             <div className={styles.termLineMuted}>
               <span className={styles.arrow}>&gt;</span>
-              <span>Status ........................ Available</span>
+              <span>Estado ........................ Disponible</span>
             </div>
           </div>
 
@@ -115,24 +116,24 @@ function WelcomeModal({ onClose }) {
             onClick={handleClose}
             disabled={closing}
           >
-            Enter_Portfolio
+            Ingresar al Portfolio
           </button>
 
           {/* FOOTER */}
           <div className={styles.footer}>
             <div className={styles.iconBlock}>
               <span>LARAVEL_ENGINE</span>
-              <small>Backend Systems</small>
+              <small>Sistemas Backend</small>
             </div>
 
             <div className={styles.iconBlock}>
               <span>REACT_INTERFACE</span>
-              <small>Modern Frontends</small>
+              <small>Interfaces Modernas</small>
             </div>
 
             <div className={styles.iconBlock}>
               <span>ORACLE_CORE</span>
-              <small>Enterprise Solutions</small>
+              <small>Soluciones Empresariales</small>
             </div>
           </div>
         </div>

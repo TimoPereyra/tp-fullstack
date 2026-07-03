@@ -1,0 +1,313 @@
+.about {
+    min-height: 100vh;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    position: relative;
+
+    padding: 60px 0;
+
+    overflow: hidden;
+}
+
+.about::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-image: url("./images/background.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    filter: blur(6px) brightness(.45);
+
+    transform: scale(1.05);
+
+    z-index: 0;
+}
+
+.about > * {
+    position: relative;
+    z-index: 1;
+}
+
+.about__content {
+    width: 100%;
+    max-width: 720px;
+    padding-left: 115px;
+    display: flex;
+    flex-direction: column;
+    gap: 75px;
+}
+
+/* ======================== */
+/* HERO */
+/* ======================== */
+
+.about__hero h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+
+    line-height: 1.1;
+    font-weight: 800;
+
+    color: white;
+
+    margin-bottom: 18px;
+
+    font-family: "Space Grotesk", sans-serif;
+}
+
+.about__hero p {
+    max-width: 600px;
+
+    font-size: .85rem;
+    line-height: 1.7;
+
+    color: #94a3b8;
+}
+
+.teal {
+    color: #14b8a6;
+}
+
+.purple {
+    color: #8b5cf6;
+}
+
+/* ======================== */
+/* TIMELINE SLIDER */
+/* ======================== */
+
+.timeline-card {
+    position: relative;
+
+    padding: 24px;
+
+    border-radius: 28px;
+
+    overflow: hidden;
+
+    backdrop-filter: blur(20px);
+
+    background: rgba(30,41,59,.55);
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    box-shadow: 0 0 30px rgba(20,184,166,.08);
+}
+
+.timeline-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 24px;
+}
+
+.timeline-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 1rem;
+    font-weight: 700;
+
+    color: white;
+}
+
+.timeline-title span {
+    width: 5px;
+    height: 24px;
+
+    border-radius: 999px;
+
+    background: #14b8a6;
+}
+
+.timeline-controls {
+    display: flex;
+    gap: 8px;
+}
+
+.timeline-controls button {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 12px;
+
+    border: 1px solid rgba(255,255,255,.1);
+
+    background: rgba(255,255,255,.03);
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: .25s;
+}
+
+.timeline-controls button:hover:not(:disabled) {
+    transform: translateY(-2px);
+
+    border-color: rgba(20,184,166,.5);
+
+    background: rgba(20,184,166,.08);
+}
+
+.timeline-controls button:disabled {
+    opacity: .35;
+    cursor: default;
+}
+
+.timeline-slider {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 16px;
+}
+
+.timeline-slide {
+    padding: 20px;
+
+    border-radius: 18px;
+
+    background: rgba(255,255,255,.03);
+
+    border: 1px solid rgba(255,255,255,.05);
+
+    backdrop-filter: blur(20px);
+
+    transition: .3s;
+}
+
+.timeline-slide:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(20,184,166,.25);
+}
+
+.timeline-slide-icon {
+    font-size: 1.8rem;
+
+    margin-bottom: 12px;
+}
+
+.timeline-slide h3 {
+    color: white;
+
+    font-size: .95rem;
+
+    margin-bottom: 4px;
+}
+
+.timeline-slide small {
+    display: block;
+
+    font-size: .75rem;
+
+    color: #14b8a6;
+
+    margin-bottom: 12px;
+}
+
+.timeline-slide p {
+    color: #94a3b8;
+
+    font-size: .82rem;
+
+    line-height: 1.5;
+}
+
+.timeline-pagination {
+    display: flex;
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-top: 20px;
+}
+
+.timeline-pagination span {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.2);
+
+    transition: .3s;
+}
+
+.timeline-pagination span.active {
+    background: #14b8a6;
+
+    box-shadow: 0 0 10px #14b8a6;
+}
+
+/* ======================== */
+/* GLOWS */
+/* ======================== */
+
+.glow {
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    filter: blur(90px);
+
+    opacity: .25;
+}
+
+.glow-teal {
+    background: #14b8a6;
+
+    right: -80px;
+    bottom: -80px;
+}
+
+.glow-purple {
+    background: #8b5cf6;
+
+    left: -80px;
+    top: -80px;
+}
+
+/* ======================== */
+/* RESPONSIVE */
+/* ======================== */
+
+@media (max-width: 1100px) {
+    .about {
+        grid-template-columns: 1fr;
+    }
+
+    .about__content {
+        max-width: 100%;
+
+        padding: 0 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about__hero h2 {
+        font-size: 2.2rem;
+    }
+
+    .about__secondary-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline-slider {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline-card {
+        padding: 20px;
+    }
+}

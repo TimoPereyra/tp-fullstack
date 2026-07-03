@@ -54,44 +54,47 @@ function Hero() {
         {/* LEFT CONTENT */}
         <motion.div className={styles.left} variants={item}>
           <span className={styles.badge}>
-            Técnico Universitario en Programación · Laravel · React
+            🎓 Técnico Universitario en Programación · UTN
           </span>
 
-          <h1 className={styles.title}>Timo Pereyra</h1>
+          <h1 className={styles.title}>Timoteo Pereyra</h1>
 
           <h2 className={styles.subtitle}>
-            Fullstack Developer · Sistemas en Producción
+            Fullstack Developer · Laravel · React · Integraciones y Sistemas en
+            Producción
           </h2>
 
           <p className={styles.description}>
-            Desarrollo sistemas web con Laravel y React enfocados en producción,
-            arquitectura backend, APIs, manejo de datos complejos y
-            automatización.
+            Desarrollador FullStack especializado en la construcción y evolución
+            de sistemas web en producción utilizando Laravel y React.
             <br />
             <br />
-            También realizo <strong>integraciones entre sistemas</strong>,{" "}
-            <strong>migraciones de plataformas y bases de datos</strong> y{" "}
-            <strong>soporte técnico / mantenimiento evolutivo</strong>.
+            Trabajo en arquitectura backend, APIs, automatización de procesos,
+            integraciones entre plataformas, migraciones de datos y
+            mantenimiento evolutivo de aplicaciones que requieren estabilidad y
+            escalabilidad.
           </p>
 
           <motion.div className={styles.buttons} variants={item}>
-            <motion.button
+            <motion.a
               className={styles.primary}
               variants={button}
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.97 }}
+              href="#experience"
             >
               Ver proyectos
-            </motion.button>
+            </motion.a>
 
-            <motion.button
+            <motion.a
               className={styles.secondary}
               variants={button}
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.97 }}
+              href="#contact"
             >
               Contacto
-            </motion.button>
+            </motion.a>
           </motion.div>
 
           {/* METRICS */}

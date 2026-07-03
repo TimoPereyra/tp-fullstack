@@ -9,20 +9,10 @@ export default function useActiveSection() {
 
       sections.forEach((section) => {
         const rect = section.getBoundingClientRect();
-
-        console.log(
-          section.id,
-          "top:",
-          Math.round(rect.top),
-          "bottom:",
-          Math.round(rect.bottom)
-        );
-
         if (
           rect.top <= window.innerHeight / 2 &&
           rect.bottom >= window.innerHeight / 2
         ) {
-          console.log("ACTIVE ->", section.id);
           setActiveSection(section.id);
         }
       });

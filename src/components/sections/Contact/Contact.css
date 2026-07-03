@@ -1,0 +1,367 @@
+/* ========================= */
+/* CONTAINER */
+/* ========================= */
+
+.contact-page {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #0b1326;
+  color: #dae2fd;
+  font-family: Inter, sans-serif;
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 80px 24px;
+}
+
+.grid {
+  display: flex;
+  gap: 56px;
+  align-items: center;
+}
+
+/* ========================= */
+/* LEFT SIDE */
+/* ========================= */
+
+.left {
+  flex: 1;
+}
+
+.badge {
+  display: inline-flex;
+  padding: 6px 12px;
+  border-radius: 999px;
+
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  border: 1px solid rgba(93, 230, 255, 0.25);
+  color: #5de6ff;
+
+  margin-bottom: 16px;
+}
+
+.left h1 {
+  font-size: 42px;
+  line-height: 1.1;
+  margin: 0 0 16px;
+  font-weight: 700;
+}
+
+.left p {
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+  max-width: 520px;
+}
+
+.info {
+  margin-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding-top: 20px;
+}
+
+.info div {
+  margin-bottom: 14px;
+}
+
+.info span {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+}
+
+.info p {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: #dae2fd;
+}
+
+.quote {
+  margin-top: 18px;
+  padding: 14px 16px;
+
+  border-left: 2px solid #5de6ff;
+  background: rgba(255,255,255,0.03);
+
+  font-style: italic;
+  color: rgba(255,255,255,0.6);
+}
+
+/* ========================= */
+/* RIGHT FORM (MODAL CARD STYLE) */
+/* ========================= */
+
+
+.glass {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+
+  padding: 40px;
+
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.08);
+
+  background: rgba(10, 15, 30, 0.65);
+  backdrop-filter: blur(18px);
+
+  box-shadow: 0 20px 80px rgba(0,0,0,0.45);
+
+  overflow: hidden;
+}
+
+/* glow minimal (no ruido visual) */
+.glow {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  filter: blur(80px);
+  border-radius: 50%;
+}
+
+.glow1 {
+  top: -80px;
+  right: -80px;
+  background: rgba(93,230,255,0.12);
+}
+
+.glow2 {
+  bottom: -80px;
+  left: -80px;
+  background: rgba(208,188,255,0.08);
+}
+
+/* ========================= */
+/* FORM FIELDS */
+/* ========================= */
+
+.row {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field label {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 12px 14px;
+
+  background: rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px;
+
+  color: #dae2fd;
+  outline: none;
+
+  font-size: 14px;
+
+  transition: 0.25s ease;
+}
+
+.field input:focus,
+.field textarea:focus {
+  border-color: #5de6ff;
+  box-shadow: 0 0 20px rgba(93,230,255,0.12);
+}
+
+/* header mensaje */
+.label-row {
+  display: flex;
+  justify-content: space-between;
+
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  color: rgba(255,255,255,0.4);
+}
+
+/* ========================= */
+/* BUTTON */
+/* ========================= */
+
+button[type="submit"] {
+  width: 100%;
+  margin-top: 18px;
+
+  padding: 14px;
+
+  border-radius: 10px;
+  border: 1px solid #5de6ff;
+
+  background: transparent;
+  color: #5de6ff;
+
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+button[type="submit"]:hover {
+  background: #5de6ff;
+  color: #0b1326;
+}
+
+button.sent {
+  background: #5de6ff;
+  color: #0b1326;
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+/* ========================= */
+/* RESPONSIVE BASE FIX */
+/* ========================= */
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 64px 20px;
+  }
+
+  .grid {
+    gap: 40px;
+  }
+
+  .left h1 {
+    font-size: 36px;
+  }
+
+  .left p {
+    max-width: 100%;
+  }
+
+  .glass {
+    padding: 32px;
+  }
+}
+
+/* ========================= */
+/* TABLET */
+/* ========================= */
+
+@media (max-width: 900px) {
+  .grid {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 32px;
+  }
+
+  .left {
+    text-align: left;
+  }
+
+  .left h1 {
+    font-size: 32px;
+  }
+
+  .glass {
+    max-width: 100%;
+  }
+
+  .row {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+
+@media (max-width: 600px) {
+  .container {
+    padding: 40px 16px;
+  }
+
+  .badge {
+    font-size: 10px;
+    padding: 5px 10px;
+  }
+
+  .left h1 {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  .left p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .info {
+    padding-top: 16px;
+  }
+
+  .info p {
+    font-size: 13px;
+  }
+
+  .quote {
+    font-size: 13px;
+    padding: 12px;
+  }
+
+  .glass {
+    padding: 22px;
+    border-radius: 12px;
+  }
+
+  .field input,
+  .field textarea {
+    font-size: 13px;
+    padding: 11px 12px;
+  }
+
+  button[type="submit"] {
+    padding: 12px;
+    font-size: 11px;
+  }
+}
+
+/* ========================= */
+/* SMALL MOBILE */
+/* ========================= */
+
+@media (max-width: 420px) {
+  .left h1 {
+    font-size: 24px;
+  }
+
+  .badge {
+    letter-spacing: 0.08em;
+  }
+
+  .glass {
+    padding: 18px;
+  }
+}
