@@ -29,6 +29,6 @@ export default async function handler(req, res) {
     await sendMail(req.body);
 
     return res.status(200).json(
-        success({}, "Mail simulated successfully.")
+        success({}, "Mail sent successfully.")
     );
 }
