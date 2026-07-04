@@ -1,7 +1,7 @@
-import { validateContact } from "./middleware/validation.js";
-import { rateLimit } from "./middleware/rateLimit.js";
-import { sendMail } from "./services/mailService.js";
-import { success, error } from "./utils/response.js";
+import { validateContact } from "../middleware/validation.js";
+import { rateLimit } from "../middleware/rateLimit.js";
+import { sendMail } from "../services/mailService.js";
+import { success, error } from "../utils/response.js";
 
 export default async function handler(req, res) {
     if (req.method !== "POST") {
