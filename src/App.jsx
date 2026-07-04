@@ -1,4 +1,5 @@
 import { useOnboarding } from "./features/onBoarding/hooks/useOnboarding";
+import { Analytics } from "@vercel/analytics/react";
 
 import LoadingScreen from "./features/onBoarding/components/LoadingScreen/LoadingScreen";
 import WelcomeModal from "./features/onBoarding/components/WelcomeModal/WelcomeModal";
@@ -40,6 +41,7 @@ function App() {
           </div>
         </div>
       )}
+      <Analytics />
     </>
   );
 }
